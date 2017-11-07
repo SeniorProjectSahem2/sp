@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sahem</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <title>sahem</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--For size to be consistent across all platform devices-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+  
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+		<div class ="container-fluid">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">   <!-- When this is pressed it targets the below navHeaderCollapse -->
+					<span class="icon-bar"></span>   <!-- For having the collapsed 3-line button -->
+					<span class="icon-bar"></span>	
+					<span class="icon-bar"></span>		
+				</button>	
+				
+				  <!--Logo-->
+				  <a class="navbar-brand" href="#">
+				    <img src="/logotransparent.png" width="150" height="50" alt="">
+				  </a>
+			
+			</div>
+			
+			
+			<div class="collapse navbar-collapse navHeaderCollapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a><%= link_to root_url do %>Home <% end %></a></li>
+					<li><a><%= link_to items_url do %>Borrow <% end %></a></li>
+					<li><a><%= link_to new_item_url do %>Lend <% end %></a></li>
+					<li><a>About</a></li> <!--Add team-->
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#faq">FAQ</a></li>
+					
+					<% if user_signed_in? %>
+					<li><a><%= link_to destroy_user_session_path, :method => :delete do %><i class="glyphicon glyphicon-log-out"></i> signout<% end %></a></li>
+					<% else %>
+					<li><a><%= link_to user_session_url do %><i class="glyphicon glyphicon-log-in"></i> signin<% end %></a></li>
+					<li><a><%= link_to new_user_registration_url do %><i class="glyphicon glyphicon-log-in"></i> signUp<% end %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			
+		</div>
+    </nav>
+	
+	
+<div class="contentYielded">
+<%= yield %>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

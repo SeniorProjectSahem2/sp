@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 
+  daily: 1
+  monthly: 1
+  yearly: 1
+
+two:
+  item_id: 
+  daily: 1
+  monthly: 1
+  yearly: 1
